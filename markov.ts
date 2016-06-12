@@ -1,10 +1,15 @@
 
 import { onclick } from 'lib';
 
-interface StateMap { [state: string] : State };
+interface StateMap { [symbol: string] : State };
 
 class State {
-	nextWeights: { [state: string] : number } = {};
+	nextWeights: { [symbol: string] : number } = {};
+
+	tally(symbol: string) {
+		let oldCount = this.nextWeights[symbol] || 0;
+		this.nextWeights[symbol] = oldCount + 1;
+	};
 };
 
 class Markovator {
@@ -32,6 +37,12 @@ class Markovator {
 	learn(word: string) {
 		let state = this.startState;
 
+		for(let letter of word) {
+			state.tally(letter);
+			state = this.grabState(letter);
+		}
+
+		state.tally("END");
 	};
 };
 
@@ -39,6 +50,8 @@ onclick("#generateBtn", function() {
 	let engine = new Markovator();
 
 	engine.learn("Cool");
+	engine.learn("Groovy");
+	engine.learn("Far-out");
 
 	console.log(engine);
 });
