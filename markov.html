@@ -1,7 +1,9 @@
 <html>
 <head>
-<script src="bundle.ts.js"></script>
-<script>require(["markov"]);</script>
+	<title>Markov Name Generator</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="bundle.ts.js"></script>
+	<script>require(["markov"]);</script>
 </head>
 <body>
 	<section>
@@ -11,11 +13,11 @@
 		"look" similar.</p>
 	</section>
 	<section>
-		<textarea id="input"></textarea>
+		<textarea id="input" rows="6"></textarea>
 		<button id="generateBtn">Generate</button>
 	</section>
 	<section>
-		<textarea id="output"></textarea>
+		<textarea id="output" rows="6"></textarea>
 	</section>
 </body>
 </html>

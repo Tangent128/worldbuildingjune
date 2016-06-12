@@ -1,0 +1,45 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background: radial-gradient(circle 100vh at 50% 100%,
+		#000 0%,
+		#f00 60vh,
+		#000 100vh);
+	background: #000;
+
+	font: 20px sans-serif;
+	line-height: 20px;
+}
+
+section {
+	background: repeating-linear-gradient(180deg,
+		#eee 0px,
+		#eee 19px,
+		#ccc 19px,
+		#ccc 20px);
+
+	width: 640px;
+
+	border-radius: 13px;
+	padding: 20px;
+	margin: 20px;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: repeating-linear-gradient(180deg,
+		#fff 0px,
+		#fff 19px,
+		#88f 19px,
+		#88f 20px);
+
+	font: 20px sans-serif;
+	line-height: 20px;
+}
