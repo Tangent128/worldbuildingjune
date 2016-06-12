@@ -1,5 +1,5 @@
 
-import { onclick } from 'lib';
+import { onclick, log } from 'lib';
 
 interface StateMap { [symbol: string] : State };
 
@@ -53,5 +53,6 @@ onclick("#generateBtn", function() {
 	engine.learn("Groovy");
 	engine.learn("Far-out");
 
-	console.log(engine);
+	log(engine.states);
+
 });
