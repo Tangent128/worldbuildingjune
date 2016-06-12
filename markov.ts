@@ -1,4 +1,6 @@
 
-import { query } from 'lib';
+import { query, onclick } from 'lib';
 
-query("body").style.backgroundColor = "red";
+onclick("#generateBtn", function() {
+	window.alert("test");
+});
