@@ -1,13 +1,19 @@
+html {
+}
+
 body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
-	background: radial-gradient(circle 100vh at 50% 100%,
-		#000 0%,
-		#f00 60vh,
-		#000 100vh);
-	background: #000;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+
+	background: radial-gradient(circle at 50% 100%,
+		#fff 0px,
+		#444 60vh,
+		#222 65vh);
 
 	font: 20px sans-serif;
 	line-height: 20px;
@@ -19,6 +25,7 @@ section {
 		#eee 19px,
 		#ccc 19px,
 		#ccc 20px);
+	box-shadow: 0px 0px 2px 2px #eee;
 
 	width: 640px;
 
