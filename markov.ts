@@ -1,5 +1,5 @@
 
-import { onclick, log } from 'lib';
+import { onclick, log, query } from 'lib';
 
 interface StateMap { [symbol: string] : State };
 
@@ -83,17 +83,21 @@ class Markovator {
 onclick("#generateBtn", function() {
 	let engine = new Markovator();
 
-	engine.learn("Cool");
-	log(engine.babble());
-
-	engine.learn("Groovy");
-	log(engine.babble());
-
-	engine.learn("Far-out");
-	log(engine.babble());
-	log(engine.babble());
-	log(engine.babble());
+	let input = query("#input") as HTMLTextAreaElement;
+	let words = input.value.match(/\S+/g);
+	for(let word of words) {
+		engine.learn(word);
+	}
 
 	log(engine.states);
+
+
+	let babbles = [];
+	for(let i = 0; i < 20; i++) {
+		babbles.push(engine.babble());
+	}
+
+	let output = query("#output") as HTMLTextAreaElement;
+	output.value = babbles.join(" ");
 
 });
