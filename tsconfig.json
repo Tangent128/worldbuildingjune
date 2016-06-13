@@ -9,6 +9,7 @@
     },
     "files": [
         "almond.js",
-        "markov.ts"
+        "markov.ts",
+        "init.ts"
     ]
 }
