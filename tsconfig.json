@@ -4,9 +4,11 @@
         "outFile": "all.ts.js",
         "target": "es5",
         "noImplicitAny": false,
-        "sourceMap": false
+        "sourceMap": false,
+        "allowJs": true
     },
-    "exclude": [
-        "node_modules"
+    "files": [
+        "almond.js",
+        "markov.ts"
     ]
 }

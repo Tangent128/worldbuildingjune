@@ -1,10 +1,10 @@
 
-site: bundle.ts.js
+site: min.ts.js
 
-bundle.ts.js: almond.js all.ts.js
-	cat almond.js all.ts.js | uglifyjs > bundle.ts.js
+min.ts.js: all.ts.js
+	uglifyjs all.ts.js -o min.ts.js -m -c
 
-all.ts.js: lib.ts markov.ts
+all.ts.js: almond.js lib.ts markov.ts
 	tsc
 
 clean:
