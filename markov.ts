@@ -84,7 +84,7 @@ onclick("#generateBtn", function() {
 	let engine = new Markovator();
 
 	let input = query("#input") as HTMLTextAreaElement;
-	let words = input.value.match(/\S+/g);
+	let words = input.value.match(/\S+/g) || "";
 	for(let word of words) {
 		engine.learn(word);
 	}
