@@ -1,5 +1,5 @@
 
-import { onclick, log, query } from 'lib';
+import { onclick, log, query } from './lib';
 
 interface StateMap { [symbol: string] : State };
 
