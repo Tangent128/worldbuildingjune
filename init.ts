@@ -1,10 +1,13 @@
 /// <reference path="almond.js" />
 
-(function(tryInit) {
-	tryInit();
-	document.addEventListener("readystatechange", tryInit);
+(function(doInit) {
+	function ready() {
+		if(document.readyState === "loading") return;
+		document.removeEventListener("readystatechange", ready);
+		doInit();
+	};
+	document.addEventListener("readystatechange", ready);
+	ready();
 })(function() {
-	if(document.readyState != "loading") {
-		require(document.body.getAttribute("data-require"));
-	}
+	require([document.body.getAttribute("data-require")], function() {});
 });
