@@ -8,8 +8,6 @@
         "allowJs": true
     },
     "files": [
-        "almond.js",
-        "markov.ts",
-        "init.ts"
+        "markov.ts"
     ]
 }

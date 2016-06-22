@@ -1,3 +1,5 @@
+/// <reference path="init.ts" />
+/// <amd-module name="markov"/>
 
 import { onclick, log, query } from './lib';
 
